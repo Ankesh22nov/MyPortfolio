@@ -9,6 +9,7 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
 *{
   margin: 0;
   padding: 0;
@@ -480,6 +481,7 @@ body {
     
   }
   .card{
+    width: 50vw;
     box-shadow: 2px 2px 10px rgba(128, 119, 119, 0.3);
     transition: box-shadow .2s;
     padding: 2%;
@@ -724,7 +726,11 @@ body {
     color: #0e2442;
     content: "/";
   }
-  
+  @media (max-width: 700px){
+    .projects {
+        flex-direction: column;
+    }
+      }
   @media (max-width: 768px) {
     .breadcrumbs .d-flex {
       display: block !important;
@@ -742,12 +748,12 @@ body {
       justify-content: center;
       align-items: center;
     } 
-    .projects{
+    /* .projects{
       flex-direction:column;
-    }
-      .info{
+    } */
+      /* .info{
     flex-direction:column;
-  }
+  } */
   }
   
   /*--------------------------------------------------------------
@@ -787,10 +793,11 @@ body {
       justify-content: center;
       align-items: center;
     }
-    .projects{
+    /* .projects{
       flex-direction:column;
-    }
+    } */
       .info{
     flex-direction:column;
   }
   }
+ 
