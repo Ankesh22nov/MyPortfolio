@@ -500,7 +500,7 @@ width: 200px;
     box-shadow: 5px 5px 10px rgba(87, 84, 84, 0.322)
   
   }
-  .card-text{
+  .card-title{
     margin: 5%;
   }
   .card-body{
@@ -527,7 +527,9 @@ width: 200px;
   
   .contact .info {
     padding: 30px;
+    background: #fff;
     width: 100%;
+    box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
   }
   
   .contact .info i {
