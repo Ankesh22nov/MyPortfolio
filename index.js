@@ -5,6 +5,57 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+
+
+let currentIndex = 0;
+
+document.addEventListener('DOMContentLoaded', () => {
+    updateButtons();
+});
+
+function moveCarousel(direction) {
+    const carousel = document.querySelector('.carousel');
+    const items = document.querySelectorAll('.carousel-item');
+    const totalItems = items.length;
+    const itemsPerView = 3;
+
+    currentIndex += direction;
+
+    if (currentIndex < 0) {
+        currentIndex = 0;
+    } else if (currentIndex > totalItems - itemsPerView) {
+        currentIndex = totalItems - itemsPerView;
+    }
+
+    const translateX = -currentIndex * (100 / itemsPerView);
+    carousel.style.transform = `translateX(${translateX}%)`;
+
+    updateButtons();
+}
+
+function updateButtons() {
+    const items = document.querySelectorAll('.carousel-item');
+    const totalItems = items.length;
+    const itemsPerView = 3;
+
+    const leftButton = document.getElementById('leftButton');
+    const rightButton = document.getElementById('rightButton');
+
+    if (currentIndex <= 0) {
+        leftButton.classList.add('disabled');
+    } else {
+        leftButton.classList.remove('disabled');
+    }
+
+    if (currentIndex >= totalItems - itemsPerView) {
+        rightButton.classList.add('disabled');
+    } else {
+        rightButton.classList.remove('disabled');
+    }
+}
+
+
+
 (function() {
     "use strict";
   
@@ -260,3 +311,7 @@
     new PureCounter();
   
   })()
+
+
+
+  
